@@ -38,7 +38,9 @@ public class CreativeEncryption {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-
+		
+		System.out.println("This program works with only lowercase (for ex: hello) words without any symbol!\n"
+				+ "And the length of the plain text should be equal to encryption key.\n");
 		System.out.println("Please enter your plain text:");
 		String input = sc.nextLine();
 		System.out.println("Please enter your encryption key:");
