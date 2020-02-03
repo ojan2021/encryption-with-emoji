@@ -38,14 +38,19 @@ public class CreativeEncryption {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-		
-		System.out.println("This program works with only lowercase (for ex: hello) words without any symbol!\n"
-				+ "And the length of the plain text should be equal to encryption key.\n");
+
+		System.out.println("This program works with only lowercase (for ex: hello) letters without any symbol!\n");
 		System.out.println("Please enter your plain text:");
 		String input = sc.nextLine();
 		System.out.println("Please enter your encryption key:");
 		String cryptoKey = sc.nextLine();
 
+		for (int i = 0; i < input.length(); i++) {
+			if (cryptoKey.length() < input.length())
+				cryptoKey = cryptoKey + cryptoKey.charAt(i % cryptoKey.length());
+
+		}
+		
 		String output = "";
 
 		HashMap<String, String> map = new HashMap<String, String>();

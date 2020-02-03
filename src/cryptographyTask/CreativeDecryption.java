@@ -67,6 +67,10 @@ public class CreativeDecryption {
 			uniEmoji[i] = Integer.parseInt(str.substring(g, g + 6));
 			g += 6;
 		}
+		for (int i = 0; i < uniEmoji.length/2; i++) {
+			if (cryptoKey.length() < uniEmoji.length/2)
+				cryptoKey = cryptoKey + cryptoKey.charAt(i % cryptoKey.length());
+		}
 
 		int deneme = 0;
 		for (int i = 0; i < cryptoKey.length(); i++) {
